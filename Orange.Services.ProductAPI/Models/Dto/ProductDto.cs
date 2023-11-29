@@ -1,17 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Orange.Services.ProductAPI.Models
+﻿namespace Orange.Services.ProductAPI.Models.Dto
 {
-    public class Product
+    public class ProductDto
     {
-        [Key]
         public int ProductId { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Range(1, 10000)]
         public double Price { get; set; }
         public string Description { get; set; }
-        public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
 
     }
