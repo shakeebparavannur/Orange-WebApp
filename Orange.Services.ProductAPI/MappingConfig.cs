@@ -12,7 +12,7 @@ namespace Orange.Services.ProductAPI
             {
                 config.CreateMap<ProductDto, Product>().ReverseMap();
             });
-            return mappingConfig
+            return mappingConfig;
         }
     }
 }

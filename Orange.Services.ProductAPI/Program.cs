@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Orange.Services.ProductAPI.DbContexts;
+using Orange.Services.ProductAPI.Repository;
 
 namespace Orange.Services.ProductAPI
 {
@@ -16,7 +17,8 @@ namespace Orange.Services.ProductAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-            builder.Services.Add
+            builder.Services.AddAutoMapper(typeof(Program));
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
             var app = builder.Build();
 
