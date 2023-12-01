@@ -22,7 +22,7 @@ namespace Orange.Services.ProductAPI.DbContexts
                 Price = 15,
                 Description = "roin posuere sollicitudin odio, quis malesuada metus ornare et. Morbi quis gravida eros. Vivamus aliquam iaculis lorem, gravida lobortis est mollis sit amet. Donec ut sapien a neque luctus feugiat in at orci. Cras odio massa, elementum vitae euismod vitae, dapibus et quam. Pellentesque ex arcu, ornare non libero sed, vestibulum vehicula tortor.",
                 CategoryName = "Appetizer",
-                ImageUrl = ""
+                ImageUrl = "https://orangemicroservice.blob.core.windows.net/menu/samoosa.jpg"
             });
             modelBuilder.Entity<Product>().HasData(new Product
             {
@@ -31,17 +31,9 @@ namespace Orange.Services.ProductAPI.DbContexts
                 Price = 13.99,
                 Description = "roin posuere sollicitudin odio, quis malesuada metus ornare et. Morbi quis gravida eros. Vivamus aliquam iaculis lorem, gravida lobortis est mollis sit amet. Donec ut sapien a neque luctus feugiat in at orci. Cras odio massa, elementum vitae euismod vitae, dapibus et quam. Pellentesque ex arcu, ornare non libero sed, vestibulum vehicula tortor.",
                 CategoryName = "Appetizer",
-                ImageUrl = ""
+                ImageUrl = "https://orangemicroservice.blob.core.windows.net/menu/paneer.jpg"
             });
-            modelBuilder.Entity<Product>().HasData(new Product
-            {
-                ProductId = 2,
-                Name = "Paneer Tikka",
-                Price = 13.99,
-                Description = "roin posuere sollicitudin odio, quis malesuada metus ornare et. Morbi quis gravida eros. Vivamus aliquam iaculis lorem, gravida lobortis est mollis sit amet. Donec ut sapien a neque luctus feugiat in at orci. Cras odio massa, elementum vitae euismod vitae, dapibus et quam. Pellentesque ex arcu, ornare non libero sed, vestibulum vehicula tortor.",
-                CategoryName = "Appetizer",
-                ImageUrl = ""
-            });
+            
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 ProductId = 3,
@@ -49,7 +41,7 @@ namespace Orange.Services.ProductAPI.DbContexts
                 Price = 13.99,
                 Description = "roin posuere sollicitudin odio, quis malesuada metus ornare et. Morbi quis gravida eros. Vivamus aliquam iaculis lorem, gravida lobortis est mollis sit amet. Donec ut sapien a neque luctus feugiat in at orci. Cras odio massa, elementum vitae euismod vitae, dapibus et quam. Pellentesque ex arcu, ornare non libero sed, vestibulum vehicula tortor.",
                 CategoryName = "Desert",
-                ImageUrl = ""
+                ImageUrl = "https://orangemicroservice.blob.core.windows.net/menu/sweet%20pie.jpg"
             });
             modelBuilder.Entity<Product>().HasData(new Product
             {
@@ -58,7 +50,7 @@ namespace Orange.Services.ProductAPI.DbContexts
                 Price = 15,
                 Description = "roin posuere sollicitudin odio, quis malesuada metus ornare et. Morbi quis gravida eros. Vivamus aliquam iaculis lorem, gravida lobortis est mollis sit amet. Donec ut sapien a neque luctus feugiat in at orci. Cras odio massa, elementum vitae euismod vitae, dapibus et quam. Pellentesque ex arcu, ornare non libero sed, vestibulum vehicula tortor.",
                 CategoryName = "Entree",
-                ImageUrl = ""
+                ImageUrl = "https://orangemicroservice.blob.core.windows.net/menu/pavbaji.jpg"
             });
 
         }
