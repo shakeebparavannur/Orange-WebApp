@@ -5,11 +5,17 @@ VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{27930943-5AC9-4001-B42C-C23C935D8147}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrangeWeb", "OrangeWeb\OrangeWeb.csproj", "{C1B0E29B-6D03-40A8-966D-3395E4E355E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrangeWeb", "OrangeWeb\OrangeWeb.csproj", "{C1B0E29B-6D03-40A8-966D-3395E4E355E5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{9790467D-A5B8-479C-8AD3-F235F0C8DB7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orange.Services.ProductAPI", "Orange.Services.ProductAPI\Orange.Services.ProductAPI.csproj", "{8F9E7FA2-F199-4A3B-9E8A-1E53332FF1B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.Services.ProductAPI", "Orange.Services.ProductAPI\Orange.Services.ProductAPI.csproj", "{8F9E7FA2-F199-4A3B-9E8A-1E53332FF1B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{BD539778-A44F-4DD0-B0B1-587BC50E37FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{F6F1F5B3-DF39-4848-8CCD-595293730EA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orange.Services.CouponAPI", "Orange.Services.CouponAPI\Orange.Services.CouponAPI.csproj", "{71190664-DD36-4C03-A827-87BC17294F63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +31,10 @@ Global
 		{8F9E7FA2-F199-4A3B-9E8A-1E53332FF1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F9E7FA2-F199-4A3B-9E8A-1E53332FF1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F9E7FA2-F199-4A3B-9E8A-1E53332FF1B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71190664-DD36-4C03-A827-87BC17294F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71190664-DD36-4C03-A827-87BC17294F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71190664-DD36-4C03-A827-87BC17294F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71190664-DD36-4C03-A827-87BC17294F63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C1B0E29B-6D03-40A8-966D-3395E4E355E5} = {27930943-5AC9-4001-B42C-C23C935D8147}
 		{8F9E7FA2-F199-4A3B-9E8A-1E53332FF1B3} = {9790467D-A5B8-479C-8AD3-F235F0C8DB7A}
+		{71190664-DD36-4C03-A827-87BC17294F63} = {9790467D-A5B8-479C-8AD3-F235F0C8DB7A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5EF92BC-C3A8-4E58-8E5E-39B53F1D5A5C}
