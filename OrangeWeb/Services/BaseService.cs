@@ -1,6 +1,10 @@
-﻿using OrangeWeb.Mode;
+﻿using Newtonsoft.Json;
+using OrangeWeb.Mode;
 using OrangeWeb.Models;
 using OrangeWeb.Services.IServices;
+using System.Net;
+using System.Text;
+using static OrangeWeb.Utility.SD;
 
 namespace OrangeWeb.Services
 {
@@ -13,25 +17,56 @@ namespace OrangeWeb.Services
             this.responseModel = new ResponseDto();
             this.httpClient = httpClient;
         }
-        public void Dispose()
+
+        public async Task<ResponseDto> SendAsync(ApiRequest request)
         {
-           GC.SuppressFinalize(true);
+            HttpClient client = httpClient.CreateClient("OrangeAPI");
+            HttpRequestMessage message = new();
+            message.Headers.Add("Accept", "application/json");
+            message.RequestUri = new Uri(request.Url);
+            if(request.Data != null)
+            {
+                message.Content = new StringContent(JsonConvert.SerializeObject(request.Data), Encoding.UTF8, "application/json");
+            }
+            HttpResponseMessage response = null;
+
+            switch(request.ApiType)
+            {
+                case ApiType.POST:
+                    message.Method = HttpMethod.Post;
+                    break;
+                case ApiType.DELETE:
+                    message.Method = HttpMethod.Delete;
+                    break;
+                case ApiType.PUT:
+                    message.Method = HttpMethod.Put;
+                    break;
+                default:
+                    message.Method = HttpMethod.Get;
+                    break;
+            }
+            response = await client.SendAsync(message);
+
+            switch(response.StatusCode)
+            {
+                case HttpStatusCode.NotFound:
+                    return new() { IsSuccess = false, Message = "Not found" };
+                case HttpStatusCode.Forbidden:
+                    return new() { IsSuccess = false, Message = "Access Denied" };
+                case HttpStatusCode.Unauthorized:
+                    return new() { IsSuccess = false, Message = "Unauthorized" };
+                case HttpStatusCode.InternalServerError:
+                    return new() { IsSuccess = false, Message = "Internal server Error" };
+                default:
+                    var apiContent = await response.Content.ReadAsStringAsync();
+                    var apiResposeDto = JsonConvert.DeserializeObject<ResponseDto> (apiContent);
+                    return apiResposeDto;
+            }
         }
 
-        //public Task<T> SendAsync<T>(ApiRequest apiRequest)
-        //{
-        //    try
-        //    {
-        //        var client = httpClient.CreateClient("OrangeAPI");
-        //        HttpRequestMessage message = new HttpRequestMessage();
-        //        message.Headers.Add("Accept", "application/json");
-        //        message.RequestUri = new Uri(apiRequest.Url);
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
