@@ -1,4 +1,4 @@
-﻿namespace OrangeWeb
+﻿namespace OrangeWeb.Utility
 {
     public static class SD
     {
