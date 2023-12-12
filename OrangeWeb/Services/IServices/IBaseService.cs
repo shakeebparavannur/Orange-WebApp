@@ -5,6 +5,6 @@ namespace OrangeWeb.Services.IServices
 {
     public interface IBaseService:IDisposable
     {
-       Task<ApiRequest>SendAsync(ApiRequest request);
+       Task<ResponseDto> SendAsync(ApiRequest request);
     }
 }
