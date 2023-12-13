@@ -3,7 +3,7 @@ using OrangeWeb.Models;
 
 namespace OrangeWeb.Services.IServices
 {
-    public interface IBaseService:IDisposable
+    public interface IBaseService
     {
        Task<ResponseDto> SendAsync(ApiRequest request);
     }
