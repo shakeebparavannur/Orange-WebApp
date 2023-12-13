@@ -82,9 +82,6 @@ namespace OrangeWeb.Services
             }
         }
 
-        public void Dispose()
-        {
-            throw new Exception();
-        }
+        
     }
 }
